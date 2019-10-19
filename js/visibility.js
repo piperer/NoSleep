@@ -25,11 +25,13 @@ document.addEventListener(visibilityChange, function() {
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 //var dateTime = date+' '+time;
     if(document[state] == "hidden"){
+		stateMsg ="OK!!"
+		if(h1.textContent != "00:00:00")
 		stateMsg = "Hey!, Dont Try going away!! Resetting Timer."
 		clearTimer();
 	}
     
-	visibilityBar.innerHTML += stateMsg+" @ "+time+"<br>";
+	visibilityBar.innerHTML = stateMsg+" @ "+time;
 }, false);
 
 // Set the initial value
