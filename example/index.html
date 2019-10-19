@@ -7,13 +7,16 @@
   <body>
     <h1>NoSleep Test Page</h1>
     <script src="../dist/NoSleep.min.js"></script>
-
+    
     <input type="button" id="toggle" value="Wake Lock is disabled" />
 
     <div>
-      <h1 style=font-size:100px><time>00:00:00</time></h1>
       
-      <button id="clear">RESET</button>
+      <h1 style=font-size:100px><time>00:00:00</time></h1>
+
+      <h1  id="visibilityBar"></h1>
+      
+      <button id="clear" onclick="clearTimer()">RESET</button>
     </div>
 
     <script>
@@ -75,13 +78,15 @@
       function stopTimer() {
           clearTimeout(t);
       }
-
-      /* Clear button */
-      clear.onclick = function() {
+      
+      function clearTimer() {
           h1.textContent = "00:00:00";
           seconds = 0; minutes = 0; hours = 0;
       }
+      
+      
     </script>
+    <script src="../js/visibility.js"></script>
 
    </body>
 </html>
